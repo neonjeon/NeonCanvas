@@ -1,20 +1,23 @@
-html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    <style>
+        body { margin: 0; display: flex; font-family: sans-serif; }
+        .sidebar { width: 80px; background: #2d3b45; min-height: 100vh; color: white; text-align: center; }
+        .main { flex: 1; padding: 40px; }
+        .card { border: 1px solid #ccc; padding: 15px; border-radius: 5px; margin-top: 20px; max-width: 300px; }
+    </style>
 </head>
 <body>
-    <div style="display: flex;">
-        <nav style="width: 80px; background: #2d3b45; height: 100vh; color: white; text-align: center;">
-            <div style="padding: 20px 0;"><i class="fa-solid fa-circle-nodes fa-2x"></i></div>
-            <div style="margin-top: 20px;"><i class="fa-solid fa-user fa-lg"></i><p style="font-size: 10px;">Account</p></div>
-            <div style="margin-top: 20px;"><i class="fa-solid fa-gauge-high fa-lg"></i><p style="font-size: 10px;">Dashboard</p></div>
-        </nav>
-        <main style="flex: 1; padding: 40px; font-family: sans-serif;">
-            {{ content }}
-        </main>
-    </div>
+    <nav class="sidebar">
+        <div style="padding: 20px 0;"><i class="fa-solid fa-circle-nodes fa-2x"></i></div>
+        <p style="font-size: 10px;">Dashboard</p>
+    </nav>
+    <main class="main">
+        {{ content }}
+    </main>
 </body>
 </html>
